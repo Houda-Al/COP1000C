@@ -1,0 +1,15 @@
+#include<stdio.h>
+#inlcude<stdlib.h>
+
+ main(){
+  int num1 = 15;
+	int num2 = 3;
+      printf("\n\t Printf and variables \n \n \n ");
+	    printf("\n \n \t 15+3= %i \n \n", 15 + 3);
+      
+	int result = num1 / num2;
+	    printf("\n \t %i /%i = %i ", num1, num2, result);
+      printf("\n \n \n \t :D :D :D ");
+
+	system("pause");
+}
