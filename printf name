@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+main(){
+ printf(" this is my name ");
+ printf(" this is my name ");
+ printf(" this is my name ");
+ printf(" this is my name ");
+ printf(" this is my name ");
+ printf(" this is my name ");
+ printf(" this is my name ");
+ printf(" this is my name ");
+ printf(" this is my name ");
+ printf(" this is my name ");
+ printf(" this is my name ");
+ printf(" this is my name ");
+ printf(" this is my name ");
+ printf(" this is my name ");
+ printf(" this is my name ");
+ 
+system("pause");
+}
