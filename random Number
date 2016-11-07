@@ -1,0 +1,47 @@
+#define _CRT_SECURE_NO_WARNINGS
+#define CLS system("cls")
+#define PAUSE system("pause")
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+
+
+
+main() {
+
+
+
+		int favNum = 0;
+		int ranNum = 0;
+		int i = 0;
+		int winNum = 0;
+		int const UB = 999;
+		int const LB = 0;
+		int playTimes = 0;
+
+		srand((unsigned)time(NULL)); // seed rand num
+
+		do {
+			do {
+				printf(" Enter your favorite 3 digit number: ");
+				scanf_s("%i", &favNum);
+				for (favNum = 0; favNum < 999; favNum++);
+				ranNum = LB + rand() % (UB - LB + 1);
+
+				if (ranNum == favNum) {
+					winNum = favNum;
+
+					printf("you won :D ");
+					printf(" this is the");
+				}
+				else {
+					printf(" you lost :( \n");
+				}
+				printf("you entered an invalid number!! \n");
+			} while (ranNum > 0 && ranNum < 999);
+
+
+		} while (i < 0 && i>356);
+
+		PAUSE;
+	}
