@@ -1,0 +1,34 @@
+// bonne chance 
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<stdlib.h>
+#define PAUSE system("pause")// pauses the output
+#define CLS system("cls") // clears the screen 
+
+
+main() {
+	// declare variables here 
+	float income = 0 ;
+	int expense= 0;
+	float theRest= 0;
+
+     // get input here 
+	printf(" How much money you make? ");
+	scanf("%f", &income);
+	printf(" How much do you spend? ");
+	scanf("%i", &expense);
+
+	//calculate/ process stuff here
+    theRest = income - expense;
+
+	//output stuff here 
+	printf("======================= \n");
+	printf("\n \n  \t  you made %12.2f dollars. \n", income);
+	printf("\n \n  \t you spent %12i dollars. \n", expense);
+	printf("\n \n  \t how much left %12.3f dollars. \n", theRest);
+	printf(" ===================== \n");
+
+
+
+	PAUSE; 
+}// end main 
