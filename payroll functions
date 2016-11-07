@@ -1,0 +1,147 @@
+
+
+#define _CRT_SECURE_NO_WARNINGS
+#define CLS system("cls")
+#define PAUSE system("pause")
+#include<stdio.h>
+#include<stdlib.h>
+#define FLUSH flush()
+
+
+// prototype functions here
+
+void displayMenu();
+char getUserChoice();
+float gethoursWorked();
+void getflush();
+float gethourlyRate();
+void getnetPay(float grossPay, float fedTax, float medIns);
+float getmedIns(float grossPay);
+float getGrossPay(float regPay, float otPay);
+float getfedTax(float grossPay);
+
+main() {
+	// define variables 
+
+	float const PAYHOURS = 40.0;
+	float hoursWorked, hourlyRate;
+	float regPay;
+	float otPay, grossPay, fedTax;
+	float medIns, netPay;
+	float const FEDRATE = (float)0.27;
+	float const MEDRATE = (float)0.14;
+	char userchoice;
+	
+	do {
+		userchoice = getUserChoice();
+		switch (userchoice) {
+			case 'A': //payRoll
+
+			
+			hourlyRate=gethourlyRate();
+			hoursWorked=gethoursWorked();
+
+			if (hoursWorked <= PAYHOURS) {
+				regPay = hoursWorked*hourlyRate;
+				otPay = 0;
+
+			}
+			else {
+				regPay = hourlyRate * PAYHOURS;
+				otPay = hourlyRate* (float)1.5*(hoursWorked - PAYHOURS);
+
+			}
+			printf("Regular Pay: %f \n", regPay);
+			printf("OT Pay: %f \n", otPay);
+
+			grossPay = getGrossPay(regPay,otPay);
+			medIns= getmedIns(grossPay);
+			fedTax= getfedTax(grossPay);
+			getnetPay(grossPay, fedTax, medIns);
+
+			PAUSE;
+			break;
+
+		case 'Q':// Quit
+			printf(" Quit");
+			PAUSE;
+			break;
+
+		default:
+			printf(" INVALID SELECTION...........try again");
+			PAUSE;
+			break;
+		}
+
+	} while (userchoice = !'Q');
+	PAUSE;
+}// end main 
+
+char getUserChoice() {    
+	char result;
+	displayMenu();
+	scanf("%c", &result); FLUSH;
+	result = toupper(result);
+	return result;
+}// end getUserChoice
+
+void displayMenu() {
+	CLS;
+	printf(" A.Do a payroll\n");
+	printf(" Q.Quit\n");
+	printf("Select one of the above: \n  ");
+
+}// end displayMnenu
+void getflush() {
+	while (getchar() != '\n');
+}// end flush
+float gethourlyRate() {
+	float result;
+	printf("Houly Rate:");
+	scanf("%f", &result);
+	return (result);
+}// end hhourly rate
+float gethoursWorked() {
+	float result;
+	printf("Hours worked:");
+	scanf("%f", &result);
+	return (result);
+} // end hours worked
+float getGrossPay(float regPay, float otPay) {
+	float result;
+	float  grossPay = 0.0;
+	grossPay = regPay + otPay;
+	result = grossPay;
+	printf("Gross Pay: %f  \n", grossPay);
+	return result;
+	PAUSE;
+}// end gross
+float getfedTax(float grossPay) {
+	float result;
+	float fedTax = 0.0;
+	float const FEDRATE = 0.27;
+	fedTax = grossPay*FEDRATE;
+	result = fedTax;
+	printf("Federal Tax (.27): %f \n", fedTax);
+	return result;
+	PAUSE;
+
+}// end fedtax
+float getmedIns(float grossPay) {
+	float result;
+	float medIns = 0.0;
+	float const MEDRATE = 0.14;
+	medIns = grossPay*MEDRATE;
+	result = medIns;
+	printf("Medical Insurance (.14): %f\n", medIns);
+	return medIns;
+	PAUSE;
+
+}// end get medins
+void getnetPay( float grossPay, float fedTax, float medIns) {
+	float  netPay = 0.0;
+	netPay = grossPay - (fedTax + medIns);
+	printf("Net Pay: %f \n", netPay);
+	PAUSE;
+
+}// end netpay
