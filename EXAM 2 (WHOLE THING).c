@@ -339,7 +339,7 @@ void getTrip() {
 		scanf("%f", &monTrip);
 	} while (monTrip < 0);
 
-
+		//////////////NEED A LOOP TO RUN OUT OF MONYE///////////	
 	gallGet = monTrip / gazPrice;
 	timesFill = (gallGet / 20);
 	milesGo = amgv*gallGet;
